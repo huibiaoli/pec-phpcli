@@ -4,4 +4,5 @@ RUN apt-get update && apt-get install -y libssl-dev libmemcached-dev zlib1g-dev 
 
 RUN pecl install mongo-1.6.14 \
     && pecl install memcached-2.2.0 \
-    && docker-php-ext-enable mongo memcached
+    && pecl install pdo-mysql \
+    && docker-php-ext-enable mongo memcached pdo-mysql
